@@ -1,0 +1,113 @@
+.my-courses-container {
+    padding-top: 90px;
+    padding-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .my-courses-header {
+    padding: 0 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+  }
+  
+  .my-courses-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .my-courses-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+  }
+  
+  .filter-tabs {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .filter-tab {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .filter-tab:hover {
+    color: var(--primary-color);
+  }
+  
+  .filter-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+  }
+  
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  
+  .no-courses-message {
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--text-light);
+    grid-column: 1 / -1;
+  }
+  
+  .browse-courses-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .browse-courses-btn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  @media (max-width: 768px) {
+    .courses-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .my-courses-container {
+      padding-top: 80px;
+    }
+  
+    .my-courses-header {
+      padding: 0 1rem 1.5rem;
+    }
+  
+    .filter-tabs {
+      padding: 0 1rem;
+    }
+  
+    .filter-tab {
+      padding: 0.75rem 1rem;
+    }
+  
+    .courses-grid {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+  }
+  

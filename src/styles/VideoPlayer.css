@@ -1,0 +1,26 @@
+.video-player-page {
+    padding-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .video-player-container {
+    background-color: #0f172a;
+    padding: 2rem 0;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    width: 100%;
+  }
+  
