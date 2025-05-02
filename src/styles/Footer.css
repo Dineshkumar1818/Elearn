@@ -2,13 +2,13 @@
     background-color: #1e293b;
     color: #f8fafc;
     padding: 2rem 0;
+    scroll-margin-top: 80px;
   }
   
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    text-align: center;
   }
   
   .footer-top {
@@ -82,34 +82,48 @@
     gap: 0.75rem;
   }
   
-  .footer-links-column a {
+  .footer-links-column a,
+  .footer-links-column .contact-link {
     color: #cbd5e1;
     transition: color 0.2s ease;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
   }
   
-  .footer-links-column a:hover {
+  .footer-links-column a:hover,
+  .footer-links-column .contact-link:hover {
     color: white;
   }
   
-  .footer-newsletter {
+  .footer-newsletter,
+  .footer-contact-form {
     margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  .footer-newsletter h3 {
+  .footer-newsletter h3,
+  .footer-contact-form h3 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .footer-newsletter p {
     color: #cbd5e1;
     margin-bottom: 1.25rem;
-    max-width: 500px;
+    text-align: center;
   }
   
   .newsletter-form {
     display: flex;
-    max-width: 500px;
   }
   
   .newsletter-form input {
@@ -140,6 +154,68 @@
   
   .newsletter-form button:hover {
     background-color: var(--primary-hover);
+  }
+  
+  .footer-contact-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .form-success i {
+    font-size: 3rem;
+    color: #10b981;
+    margin-bottom: 1rem;
   }
   
   .footer-bottom {

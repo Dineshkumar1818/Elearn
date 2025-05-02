@@ -1,4 +1,4 @@
-export const coursesData = [
+const coursesData = [
     {
       id: 1,
       title: "Complete Web Development Bootcamp",
@@ -266,5 +266,6 @@ export const coursesData = [
       image: "/images/photography.jpg",
       reviews: [],
     },
-  ];
-  
+];
+
+export default coursesData;

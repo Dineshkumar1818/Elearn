@@ -46,13 +46,13 @@
   
   .bestseller-badge {
     left: 10px;
-    background-color: var(--success-color);
+    background-color: #10b981;
     color: white;
   }
   
   .discount-badge {
     right: 10px;
-    background-color: var(--error-color);
+    background-color: #ef4444;
     color: white;
   }
   
@@ -73,7 +73,7 @@
   
   .course-instructor {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: #64748b;
     margin-bottom: 0.75rem;
   }
   
@@ -104,7 +104,7 @@
   
   .rating-count {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #64748b;
   }
   
   .course-progress {
@@ -113,7 +113,7 @@
   
   .progress-bar {
     height: 6px;
-    background-color: var(--background-alt);
+    background-color: #f8fafc;
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 0.25rem;
@@ -121,12 +121,12 @@
   
   .progress-fill {
     height: 100%;
-    background-color: var(--primary-color);
+    background-color: #4f46e5;
   }
   
   .progress-text {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #64748b;
   }
   
   .course-meta {
@@ -135,7 +135,7 @@
     gap: 0.75rem;
     margin-bottom: 0.75rem;
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #64748b;
   }
   
   .course-level,
@@ -163,7 +163,7 @@
   
   .original-price {
     font-size: 1rem;
-    color: var(--text-light);
+    color: #64748b;
     text-decoration: line-through;
   }
   

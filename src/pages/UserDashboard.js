@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Line } from "react-chartjs-2"
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js"
 import CourseCard from "../components/CourseCards"
-import { coursesData } from "../data/coursesData"
+import coursesData  from "../data/coursesData"
 import "../styles/UserDashboard.css"
 
 // Register Chart.js components

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import CourseCard from "../components/CourseCards"
-import { coursesData } from "../data/coursesData"
+import  coursesData  from "../data/coursesData"
 import "../styles/MyCourses.css"
 
 const MyCourses = ({ user }) => {

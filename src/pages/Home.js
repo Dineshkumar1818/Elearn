@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import CourseCard from "../components/CourseCards"
 import HeroSection from "../components/HeroSection"
 import { motion } from "framer-motion"
-import { coursesData } from "../data/coursesData"
+import  coursesData from "../data/coursesData"
 import "../styles/Home.css"
 
 const Home = () => {

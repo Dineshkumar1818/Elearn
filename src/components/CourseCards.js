@@ -1,11 +1,9 @@
-"use client"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
 import "../styles/CourseCard.css"
 
-const CourseCards = ({ course, showProgress = false }) => {
+const CourseCard = ({ course, showProgress = false }) => {
   return (
-    <motion.div className="course-card" whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+    <div className="course-card">
       <Link to={`/course/${course.id}`} className="course-card-link">
         <div className="course-image">
           <img src={course.image || "/placeholder.svg"} alt={course.title} />
@@ -24,7 +22,7 @@ const CourseCards = ({ course, showProgress = false }) => {
                 <i key={star} className={`fas fa-star ${star <= Math.floor(course.rating) ? "filled" : ""}`}></i>
               ))}
             </div>
-            <span className="rating-count">({course.reviews})</span>
+            <span className="rating-count">({course.reviewsCount || 0})</span>
           </div>
 
           {showProgress && course.progress !== undefined && (
@@ -57,8 +55,8 @@ const CourseCards = ({ course, showProgress = false }) => {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   )
 }
 
-export default CourseCards
+export default CourseCard

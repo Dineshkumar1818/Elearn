@@ -119,3 +119,86 @@ img {
     padding: 0 1rem;
   }
 }
+/* Global input field fixes */
+
+/* Target all input, select, and textarea elements site-wide */
+input, 
+select, 
+textarea,
+.form-group input,
+.form-group textarea,
+.form-control,
+.input-field,
+.login-input,
+.signup-input,
+.contact-input {
+  color: #333333 !important; /* Force text color to be dark */
+  background-color: #f8fafc !important; /* Light background for contrast */
+  border: 2px solid var(--border-color, #e2e8f0) !important; /* Ensure border is visible */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important; /* Add depth */
+}
+
+/* Ensure placeholder text is visible but distinguished from actual input */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #94a3b8 !important; /* Lighter than input text but still visible */
+  opacity: 1 !important; /* Some browsers apply opacity to placeholders */
+}
+
+/* Ensure focus states are clearly visible */
+input:focus,
+textarea:focus,
+select:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.form-control:focus,
+.input-field:focus,
+.login-input:focus,
+.signup-input:focus,
+.contact-input:focus {
+  border-color: var(--primary-color, #4f46e5) !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2) !important;
+  outline: none !important;
+}
+
+/* Fix for potential issues with CSS custom properties */
+:root {
+  --text-color: #333333;
+  --input-bg: #f8fafc;
+  --border-color: #e2e8f0;
+  --primary-color: #4f46e5;
+  --secondary-color: #7c3aed;
+  --text-light: #64748b;
+  --background-alt: #f1f5f9;
+}
+
+/* Additional checks for nested elements inside forms */
+form label,
+.form-label,
+.input-label {
+  color: #333333 !important; /* Ensure labels are visible */
+}
+
+/* Dark mode considerations - only if your site has dark mode */
+@media (prefers-color-scheme: dark) {
+  input, 
+  select, 
+  textarea,
+  .form-group input,
+  .form-group textarea,
+  .form-control,
+  .input-field,
+  .login-input,
+  .signup-input,
+  .contact-input {
+    color: #f8fafc !important; /* Light text for dark mode */
+    background-color: #334155 !important; /* Dark but not black background */
+  }
+  
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    color: #94a3b8 !important; /* Visible placeholder in dark mode */
+  }
+}

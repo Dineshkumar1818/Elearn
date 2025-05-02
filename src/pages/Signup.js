@@ -63,6 +63,37 @@ const Signup = ({ onLogin }) => {
     }
   }
 
+  const checkboxStyles = `
+    .form-group.terms {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .form-group.terms input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      accent-color: #ff6b00;
+      cursor: pointer;
+    }
+
+    .form-group.terms label {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .form-group.terms a {
+      color: #ff6b00;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .form-group.terms a:hover {
+      text-decoration: underline;
+    }
+  `
+
   return (
     <div className="auth-container">
       <motion.div
@@ -159,6 +190,8 @@ const Signup = ({ onLogin }) => {
           <p>Start your learning journey today and unlock your potential.</p>
         </div>
       </div>
+
+      <style>{checkboxStyles}</style>
     </div>
   )
 }

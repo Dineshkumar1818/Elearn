@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useParams, Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { coursesData } from "../data/coursesData"
+import  coursesData  from "../data/coursesData"
 import "../styles/VideoPlayer.css"
 
 const VideoPlayer = ({ user }) => {

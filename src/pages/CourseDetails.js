@@ -166,7 +166,7 @@ const CourseDetails = () => {
               <div className="curriculum-info">
                 <span>{course.modules ? course.modules.length : 0} modules</span>
                 <span>•</span>
-                <span>{course.totalLectures || 0} lectures</span>
+                <span>{course.lectures || 0} lectures</span>
                 <span>•</span>
                 <span>Total: {course.duration}</span>
               </div>
@@ -183,7 +183,7 @@ const CourseDetails = () => {
                           </h4>
                         </div>
                         <div className="module-meta">
-                          <span>{module.lectures} lectures</span>
+                          <span>{module.totalLectures || 0} lectures</span>
                           <span>•</span>
                           <span>{module.duration}</span>
                         </div>
@@ -191,8 +191,8 @@ const CourseDetails = () => {
 
                       {expandedModules[module.id] && (
                         <div className="module-content">
-                          {module.lectures &&
-                            module.lectures.map((lecture, lectureIndex) => (
+                          {module.lectureList &&
+                            module.lectureList.map((lecture, lectureIndex) => (
                               <div className="lecture-item" key={lectureIndex}>
                                 <div className="lecture-info">
                                   <i
@@ -249,7 +249,7 @@ const CourseDetails = () => {
               </div>
 
               <div className="reviews-list">
-                {course.reviews &&
+                {course.reviews && course.reviews.length > 0 ? (
                   course.reviews.map((review, index) => (
                     <div className="review-item" key={index}>
                       <div className="review-header">
@@ -268,7 +268,10 @@ const CourseDetails = () => {
                       </div>
                       <p className="review-content">{review.content}</p>
                     </div>
-                  ))}
+                  ))
+                ) : (
+                  <p>No reviews yet for this course.</p>
+                )}
               </div>
             </div>
           )}
@@ -345,7 +348,7 @@ const CourseDetails = () => {
             <ul>
               <li>
                 <i className="fas fa-play-circle"></i>
-                <span>{course.totalLectures || "42"} on-demand videos</span>
+                <span>{course.lectures || "42"} on-demand videos</span>
               </li>
               <li>
                 <i className="fas fa-file-alt"></i>

@@ -1,9 +1,55 @@
+"use client"
+
 import { Link } from "react-router-dom"
+import { useState } from "react"
 import "../styles/Footer.css"
 
 const Footer = () => {
+  const [email, setEmail] = useState("")
+  const [showContactForm, setShowContactForm] = useState(false)
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+  const [formSubmitted, setFormSubmitted] = useState(false)
+
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+    // Simulate subscription
+    setTimeout(() => {
+      alert(`Thank you for subscribing with ${email}!`)
+      setEmail("")
+    }, 500)
+  }
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target
+    setContactForm({
+      ...contactForm,
+      [name]: value,
+    })
+  }
+
+  const handleContactSubmit = (e) => {
+    e.preventDefault()
+    // Simulate form submission
+    setTimeout(() => {
+      setFormSubmitted(true)
+      setTimeout(() => {
+        setShowContactForm(false)
+        setContactForm({
+          name: "",
+          email: "",
+          message: "",
+        })
+        setFormSubmitted(false)
+      }, 3000)
+    }, 1000)
+  }
+
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-logo">
@@ -87,7 +133,9 @@ const Footer = () => {
                 <Link to="/help">Help Center</Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <button className="contact-link" onClick={() => setShowContactForm(!showContactForm)}>
+                  Contact Us
+                </button>
               </li>
               <li>
                 <Link to="/faq">FAQ</Link>
@@ -123,14 +171,71 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-newsletter">
-          <h3>Subscribe to Our Newsletter</h3>
-          <p>Get the latest news and updates delivered straight to your inbox.</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Your email address" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
+        {showContactForm ? (
+          <div className="footer-contact-form">
+            <h3>Contact Us</h3>
+            {formSubmitted ? (
+              <div className="form-success">
+                <i className="fas fa-check-circle"></i>
+                <p>Thank you for your message! We'll get back to you soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleContactSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={contactForm.name}
+                    onChange={handleContactChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact-email">Email</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    value={contactForm.email}
+                    onChange={handleContactChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={contactForm.message}
+                    onChange={handleContactChange}
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="submit-button">
+                  Send Message
+                </button>
+              </form>
+            )}
+          </div>
+        ) : (
+          <div className="footer-newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get the latest news and updates delivered straight to your inbox.</p>
+            <form className="newsletter-form" onSubmit={handleSubscribe}>
+              <input
+                type="email"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        )}
 
         <div className="footer-bottom">
           <div className="footer-copyright">

@@ -13,6 +13,10 @@ import UserDashboard from "./pages/UserDashboard"
 import MyCourses from "./pages/MyCourses"
 import Wallet from "./pages/Wallet"
 import VideoPlayer from "./pages/VideoPlayer"
+import Courses from "./pages/Courses"
+import Categories from "./pages/Categories"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 
 // Components
 import Navbar from "./components/Navbar"
@@ -61,6 +65,10 @@ function App() {
               element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup onLogin={handleLogin} />}
             />
             <Route path="/course/:id" element={<CourseDetails />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route
               path="/dashboard"
               element={
